@@ -11,8 +11,10 @@ void main() {
           )));
 }
 
+
+
 class cityList extends StatelessWidget {
-  var city = ["Tokiyo", "Paris","Delhi", "Dubai","London", "Vancouver", "New York", "Berlin", "Rome"];
+  var city = ["Tokyo", "Paris","Delhi", "Dubai","London", "Vancouver", "New York", "Berlin", "Rome"];
   var country = ["Japan", "France","India", "United Arab Emirates","Britain", "Canada", "USA", "Germany", "Italy"];
   var population = [
     "Population : 38M",
