@@ -32,6 +32,13 @@ dependencies:
     sdk: flutter
   device_preview: ^1.1.0
   font_awesome_flutter: ^10.4.0
+  carousel_slider: ^4.0.0
+  google_fonts: ^4.0.3
+  persistent_bottom_nav_bar: ^5.0.2
+  convex_bottom_bar: ^3.2.0
+  salomon_bottom_bar: ^3.3.2
+  sliding_clipped_nav_bar: ^3.1.0+4
+  google_nav_bar: ^5.0.6
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,6 +71,8 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/musicIcons/
+    - assets/images/foodstuff/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
