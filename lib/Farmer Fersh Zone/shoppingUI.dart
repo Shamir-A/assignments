@@ -65,7 +65,7 @@ class _FarmersZoneState extends State<FarmersZone> {
                 width: double.infinity,
                 height: 40,
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const  InputDecoration(
                       hintText: "Search for fruits and vegetables..",
                       prefixIcon:
                           Icon(Icons.search_outlined, color: Colors.grey),

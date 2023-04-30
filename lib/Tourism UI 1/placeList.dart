@@ -25,12 +25,16 @@ class placeList extends StatelessWidget {
               style: TextStyle(fontSize: 30),
             ),
             Text("${place["about"]}"),
-            TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "Press to Explore",
-                  style: TextStyle(fontSize: 13),
-                ))
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                style: ButtonStyle(),
+                  onPressed: () {},
+                  child: const Text(
+                    "Press to Explore",
+                    style: TextStyle(fontSize: 13),
+                  )),
+            )
           ],
         ),
       ),

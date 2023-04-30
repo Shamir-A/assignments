@@ -32,10 +32,10 @@ class placeMain extends StatelessWidget {
       ),
       body: ListView(
           padding: const EdgeInsets.all(15),
-          children: placeData.map((place) {
+          children: placeData.map((image) {
             return TextButton(
-                onPressed: () => gotoNext(context, place["id"]),
-                child: Text("${place["place"]}",style: TextStyle(fontSize: 20), ));
+                onPressed: () => gotoNext(context, image["id"]),
+                child: Text("${image["place"]}",style: TextStyle(fontSize: 20), ));
           }).toList()
       ),
     );
