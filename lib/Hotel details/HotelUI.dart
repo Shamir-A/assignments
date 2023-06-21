@@ -63,12 +63,12 @@ class hotelDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 280, left: 20),
               child: Container(
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         Icon(
                           Icons.star,
                           color: Colors.greenAccent,
@@ -95,12 +95,12 @@ class hotelDetails extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 310, left: 20),
+            const Padding(
+              padding: EdgeInsets.only(top: 310, left: 20),
               child: Column(
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.location_on,
                         size: 15,
@@ -115,11 +115,11 @@ class hotelDetails extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 285, left: 270),
+            const Padding(
+              padding: EdgeInsets.only(top: 285, left: 270),
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     "\£160.89",
                     style: TextStyle(
                         color: Colors.blue,
@@ -127,7 +127,7 @@ class hotelDetails extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Text(
                         "    /per night",
                         style:

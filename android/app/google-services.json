@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1071828970676",
+    "project_id": "phone-otp-gen",
+    "storage_bucket": "phone-otp-gen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071828970676:android:8834e182099881c4957be1",
+        "android_client_info": {
+          "package_name": "com.srx.uk.assignments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071828970676-bq4g373i2br4ok2re54bm45ipgu70sjs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHOjk7TcMS76v_RW8B_MxWEcxUMg8zb5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071828970676-bq4g373i2br4ok2re54bm45ipgu70sjs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1071828970676-hsbc9a0360fuc8gsi8spttn1259uj1j5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.srx.uk.assignments"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

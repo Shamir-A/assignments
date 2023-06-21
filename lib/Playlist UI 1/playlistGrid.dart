@@ -1,86 +1,73 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(DevicePreview(builder: (BuildContext context) => const MaterialApp(
+void main() {
+  runApp(DevicePreview(builder: (BuildContext context)=> MaterialApp(
     useInheritedMediaQuery: true,
-    home: PLGrid(),
+    home: PLGD(),
     debugShowCheckedModeBanner: false,
   )));
 }
-class PLGrid extends StatelessWidget {
-  const PLGrid({Key? key}) : super(key: key);
+class PLGD extends StatelessWidget {
+  @override
+  var img = [
+    "assets/images/musicIcons/hanz.jpeg",
+    "assets/images/musicIcons/lofi.jpg",
+    "assets/images/musicIcons/popmusic.jpeg",
+    "assets/images/musicIcons/sushin.jpg",
+    "assets/images/musicIcons/tiktok.jpg",
+    "assets/images/musicIcons/top50.jpg"
+  ];
+  var txt = [
+    "Hanz Zimmer",
+    "Lo-Fi",
+    "Pop Music",
+    "Sushin Shyam",
+    "Tik Tok",
+    "Top 50"
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return
-      Center(
-        child: Container(
-          child: GridView(
-              scrollDirection: Axis.vertical,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20,
-              ),
-              children: [
-                Card(
-                    shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                    borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/popmusic.jpeg",
-                  height: 50,
-                  width: 50,
-                ),),
-                Card(
-                  shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                  borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/lofi.jpg",
-                  height: 50,
-                  width: 50,
-                ),),
-                Card(
-                  shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                      borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/top50.jpg",
-                  height: 50,
-                  width: 50,
-                ),),
-                Card(
-                  shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                  borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/hanz.jpeg",
-                  height: 50,
-                  width: 50,
-                ),),
-                Card(
-                  shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                      borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/sushin.jpg",
-                  height: 50,
-                  width: 50,
-                ),),
-                Card(
-                  shape: RoundedRectangleBorder(side: const BorderSide(color: Colors.deepPurple),
-                  borderRadius: BorderRadius.circular(20)),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                  "assets/images/musicIcons/tiktok.jpg",
-                  height: 50,
-                  width: 50,
-                ),),
-              ],
-    ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(img[index]))),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                          left: 15,
+                          bottom: 20,
+                          child: Text(
+                            txt[index],
+                            style: const TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  );
+                })
+          ],
         ),
-      );
+      ),
+    );
   }
 }

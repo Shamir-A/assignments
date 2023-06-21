@@ -205,14 +205,14 @@ class _FarmersZoneState extends State<FarmersZone> {
             Container(
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(30)),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       child: Column(
-                        children: const [
+                        children: [
                           Icon(
                             FontAwesomeIcons.stopwatch,
                             color: Colors.green,
@@ -225,9 +225,9 @@ class _FarmersZoneState extends State<FarmersZone> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       child: Column(
-                        children: const [
+                        children: [
                           Icon(
                             FontAwesomeIcons.locationArrow,
                             color: Colors.red,
@@ -240,9 +240,9 @@ class _FarmersZoneState extends State<FarmersZone> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       child: Column(
-                        children: const [
+                        children: [
                           Icon(
                             FontAwesomeIcons.sourcetree,
                             color: Colors.yellow,

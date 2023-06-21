@@ -4,15 +4,16 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (BuildContext context) =>
-      MaterialApp(
-        useInheritedMediaQuery: true,
-        home: placeMain(),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          "secondpage": (context) => placeList(),
-        },
-      )));
+  runApp(DevicePreview(
+      builder: (BuildContext context) => MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.grey),
+            useInheritedMediaQuery: true,
+            home: placeMain(),
+            debugShowCheckedModeBanner: false,
+            routes: {
+              "secondpage": (context) => placeList(),
+            },
+          )));
 }
 
 class placeMain extends StatelessWidget {
@@ -20,27 +21,44 @@ class placeMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var image = [
-    //   "assets/images/new york.jpg",
-    //   "assets/images/dubai.jpg",
-    //   "assets/images/paris.jpg",
-    //   "assets/images/tokiyo.jpg",
-    // ];
     return Scaffold(
+      backgroundColor: Colors.white70,
       appBar: AppBar(
         title: const Text("Place Home"),
       ),
       body: ListView(
-          padding: const EdgeInsets.all(15),
+           padding: const EdgeInsets.only(top: 8.0),
           children: placeData.map((image) {
             return TextButton(
                 onPressed: () => gotoNext(context, image["id"]),
-                child: Text("${image["place"]}",style: TextStyle(fontSize: 20), ));
-          }).toList()
-      ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      alignment: AlignmentDirectional.bottomStart,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            "${image["image"]}",
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("${image["place"]}",
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+          }).toList()),
     );
   }
-  void gotoNext(BuildContext context, place){
+
+  void gotoNext(BuildContext context, place) {
     Navigator.of(context).pushNamed("secondpage", arguments: place);
   }
 }

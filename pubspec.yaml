@@ -40,6 +40,16 @@ dependencies:
   sliding_clipped_nav_bar: ^3.1.0+4
   google_nav_bar: ^5.0.6
   flashy_tab_bar2: ^0.0.6
+  icons_plus: ^4.0.0
+  outline_search_bar: ^2.3.0
+  intl_phone_number_input: ^0.7.3+1
+  firebase_core: ^2.11.0
+  firebase_auth: ^4.5.0
+  firebase_core_web: ^2.4.0
+  firebase_storage: ^11.2.0
+  pinput: ^2.2.31
+  carousel_images: ^1.1.2
+
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,6 +1,5 @@
-import 'package:assignments/Playlist%20UI%201/PL1.dart';
-import 'package:assignments/Playlist%20UI%201/PlaylistHome.dart';
-import 'package:assignments/Playlist%20UI%201/playlistGrid.dart';
+import 'package:assignments/Playlist%20UI%201/PLGD.dart';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
@@ -37,22 +36,24 @@ class _PlayListState extends State<PlayList> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white10,
-        body: Column(
+    return Scaffold(
+      backgroundColor: Colors.white10,
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          "Playlist",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+            color: Color(0xEAED7575),
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "Playlist",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28,
-                  color: const Color(0xF0B4C2),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
@@ -77,37 +78,37 @@ class _PlayListState extends State<PlayList> {
                 ),
               ),
             ),
-            PLGD(),
+            Plgd(),
           ],
         ),
-        bottomNavigationBar: FlashyTabBar(
-          backgroundColor: Colors.black,
-          selectedIndex: _selectedIndex,
-          iconSize: 25,
-          animationCurve: Curves.linear,
-          showElevation: false,
-          items: [
-            FlashyTabBarItem(
-                activeColor: Colors.white,
-                icon: const Icon(Icons.home),
-                title: const Text("Home")),
-            FlashyTabBarItem(
-                activeColor: Colors.white,
-                icon: const Icon(Icons.search_outlined),
-                title: const Text("Search")),
-            FlashyTabBarItem(
-                activeColor: Colors.white,
-                icon: const Icon(Icons.bookmark_outline),
-                title: const Text("Playlist")),
-            FlashyTabBarItem(
-                activeColor: Colors.white,
-                icon: const Icon(Icons.more_horiz_outlined),
-                title: const Text("Menu"))
-          ],
-          onItemSelected: (index) => setState(() {
-            _selectedIndex = index;
-          }),
-        ),
+      ),
+      bottomNavigationBar: FlashyTabBar(
+        backgroundColor: Colors.black,
+        selectedIndex: _selectedIndex,
+        iconSize: 25,
+        animationCurve: Curves.linear,
+        showElevation: false,
+        items: [
+          FlashyTabBarItem(
+              activeColor: Colors.white,
+              icon: const Icon(Icons.home),
+              title: const Text("Home")),
+          FlashyTabBarItem(
+              activeColor: Colors.white,
+              icon: const Icon(Icons.search_outlined),
+              title: const Text("Search")),
+          FlashyTabBarItem(
+              activeColor: Colors.white,
+              icon: const Icon(Icons.bookmark_outline),
+              title: const Text("Playlist")),
+          FlashyTabBarItem(
+              activeColor: Colors.white,
+              icon: const Icon(Icons.more_horiz_outlined),
+              title: const Text("Menu"))
+        ],
+        onItemSelected: (index) => setState(() {
+          _selectedIndex = index;
+        }),
       ),
     );
   }
